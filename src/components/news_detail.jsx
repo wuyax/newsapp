@@ -13,7 +13,13 @@ export default class NewsDetail extends Component {
                 newsDetil:{}
             }
         }
+
     componentDidMount(){
+        console.log('componentDidMount')
+        this.getNews()
+
+    }
+    getNews= ()=>{
         let uniquekey=this.props.params.uniqueKey;
         let url = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=${uniquekey}`;
         axios.get(url)
@@ -24,9 +30,9 @@ export default class NewsDetail extends Component {
                     this.setState({
                         newsDetil:result
                     })
-                }
+                };
+                document.title = result.title + " - React News | React 驱动的新闻平台";
             });
-
     }
 
     render () {

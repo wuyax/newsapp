@@ -162,3 +162,33 @@
 .moreNews{
     margin-top: 15px;
 }
+
+/*新闻详情页面*/
+.article-content{
+    padding: 30px 20px 20px 20px;
+}
+#title{
+    margin:0 20px 0 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #999;
+}
+.article-src-time{
+    margin-top: 5px;
+}
+#content{
+    font-size: 16px;
+}
+#content p{
+    text-indent:25px;
+    margin:10px 0;
+}
+#content img{
+    display: block;
+    width: 80%;
+    margin: 5px auto;
+}
+/*视频播放器的宽度*/
+.video_iframe{
+    width: 500px;
+    height: 450px;
+}

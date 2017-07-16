@@ -11,7 +11,7 @@ export default class Artical extends React.Component{
                 moreNews:[]
             }
         }
-    componentDidMount(){
+    componentWillReceiveProps(){
         let uniqueKey = this.props.uniqueKey;
         let url = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=${uniqueKey}`;
         axios.get(url)
@@ -26,18 +26,13 @@ export default class Artical extends React.Component{
 
     }
     render(){
+        let pagecontent = this.state.article.pagecontent
         return(
             <div>
                 <article>
-                    <div className="title">
-                        <div className="article-title">{this.state.article.title}</div>
-                        <div className="article-title-time">
-                            <span>{this.state.article.date}&nbsp;来源：&nbsp;{this.state.article.author_name}</span>
-                        </div>
-                    </div>
                     <div className="article-content">
-
-
+                        <div dangerouslySetInnerHTML={{__html: pagecontent}}/>
+                        <hr/>
                     </div>
                 </article>
             </div>
