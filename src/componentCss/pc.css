@@ -97,6 +97,10 @@
 }
 
 /*news_products组件*/
+/*为了解决hover的时候没有右侧和下部边框无法显示的问题*/
+.newsPro{
+    margin:0 3px 3px 0;
+}
 .pro_bg {
     background: #eeeeee;
     margin-top: 10px;
@@ -129,14 +133,32 @@
 .imageblock {
     float: left;
 }
+/*imgblock的文字*/
 .custom-card {
     padding: 5px;
 }
 .custom-card p {
     color: #999;
 }
+/*imgblock 的more按钮演示*/
+.ant-card-extra a:hover{
+    color: #108ee9 !important;
+}
 /*footer*/
 .footer{
     margin: 20px 0 30px 0;
     text-align: center;
+}
+
+
+
+.imageblockMore{
+    width:100%;
+    margin-bottom: 20px;
+}
+.imageblockMore img{
+    width: 100%;
+}
+.moreNews{
+    margin-top: 15px;
 }

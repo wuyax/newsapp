@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router'
 import {Row, Col,Carousel,Tabs} from 'antd';
 import carousel_1 from '../images/carousel_1.jpg';
 import carousel_2 from '../images/carousel_2.jpg';
@@ -33,10 +32,10 @@ export default class NewsContainer extends Component {
 
                     <Tabs defaultActiveKey="1" className='tabs_news' style={{width: "35%"}}>
                         <TabPane tab="头条新闻" key="1">
-                            <NewsBlock count={20} type={'top'}/>
+                            <NewsBlock count={21} type={'top'}/>
                         </TabPane>
                         <TabPane tab="国际新闻" key="2">
-                            <NewsBlock count={20} type={'guoji'}/>
+                            <NewsBlock count={21} type={'guoji'}/>
                         </TabPane>
                     </Tabs>
 

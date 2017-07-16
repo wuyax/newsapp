@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
-
+import {Card} from 'antd';
 export default class NewsProducts extends Component{
     render(){
         return (
+            <Card className = "newsPro">
             <div>
                 {/*<!--网页注释-->*/}
                 <div className="pro pro_bg" style={{fontSize: '18px'}}>
@@ -108,6 +109,7 @@ export default class NewsProducts extends Component{
                         足球直播</a>
                 </div>
             </div>
+            </Card>
         )
     }
 }
