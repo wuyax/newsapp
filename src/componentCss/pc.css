@@ -26,4 +26,112 @@
 .ant-form-item-control > .ant-btn{
     width: 100%;
 }
+
+/*news container 模块*/
+.container {
+    padding-top: 10px;
+    margin-top: 5px;
+}
 /*轮播图*/
+.leftContainer{
+    float: left;
+    padding: 15px 10px 0 0;
+}
+.ant-carousel {
+    width: 428px;
+    float: left;
+}
+.ant-carousel img {
+    width: 428px;
+    height: 260px;
+}
+.slick-list{
+    padding: 20px 0 20px 0;
+}
+
+
+
+
+/*中间的新闻模块*/
+.ant-tabs-bar{
+    margin-bottom: 6px;
+}
+
+
+.tabs_news {
+    padding: 0 10px 2px 10px;
+    width: 400px;
+    float: left;
+}
+.tabs_news li {
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 368px;
+    float: left;
+    text-overflow: ellipsis;
+
+}
+.tabs_news li a{
+    color: #555;
+}
+.tabs_news li a:hover{
+    color: #108ee9;
+}
+/*新闻产品*/
+.tabs_product {
+    width: 300px;
+    padding-left: 10px;
+    float: left;
+}
+.tabs_product li {
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 257px;
+    text-overflow: ellipsis;
+}
+
+/*news_products组件*/
+.pro_bg {
+    background: #eeeeee;
+    margin-top: 10px;
+}
+
+.pro {
+    padding: 5px;
+    overflow: hidden;
+}
+
+.pro a {
+    float: left;
+    line-height: 30px;
+    margin-right: 5px;
+}
+
+/*news_image_block组件*/
+.topNewsList {
+    float: left;
+    text-align: left;
+    font-size: 12px;
+    margin:10px 0;
+}
+.topNewsList a {
+    line-height: 22px !important;
+    color: #666 !important;
+}
+
+/*imgblock*/
+.imageblock {
+    float: left;
+}
+.custom-card {
+    padding: 5px;
+}
+.custom-card p {
+    color: #999;
+}

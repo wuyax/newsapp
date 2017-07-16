@@ -196,16 +196,6 @@ class NewsHeader extends Component {
                 })
         }
 
-
-
-
-
-
-
-
-
-
-
         /*this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log(values);
@@ -244,7 +234,7 @@ class NewsHeader extends Component {
           <Col span={3}>
             <a href="/" className="logo">
               <img src={logo} alt="logo"/>
-              <span>News2</span>
+              <span>News</span>
             </a>
           </Col>
           <Col span={19}>
