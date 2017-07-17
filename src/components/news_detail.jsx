@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row,Col,Card} from 'antd';
+import {Row,Col,Card,BackTop} from 'antd';
 import axios from 'axios';
 import Article from './news_artical';
 import MoreNews from './news_moreNews';
@@ -69,7 +69,9 @@ export default class NewsDetail extends Component {
                         </Card>
                     </div>
                 </Col>
-              <Col span={1}/>
+              <Col span={1}>
+                  <BackTop/>
+            </Col>
             </Row>
           </div>
     )
