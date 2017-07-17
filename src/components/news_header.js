@@ -73,7 +73,7 @@ class NewsHeader extends Component {
         this.setState({
             username:null
             })
-        localStorage.removeItem('username');
+        localStorage.removeItem('user');
     }
 
 
@@ -174,13 +174,14 @@ class NewsHeader extends Component {
                             username:result.NickUserName,
                             visiable:false
                         });
-                        localStorage.setItem('username',result.NickUserName);
+                        let {UserId,NickUserName}=result;
+                        localStorage.setItem('user',JSON.stringify({UserId,NickUserName}));
                         //清空用户登录的信息
                         resetFields();
                         //提示信息
                         notification['success']({
                             message: '登录成功',
-                            description: `${result.NickUserName}欢迎回来，你可以畅所欲言了！`,
+                            description: `${NickUserName}欢迎回来，你可以畅所欲言了！`,
                         });
                     }else {
                         //登录失败
