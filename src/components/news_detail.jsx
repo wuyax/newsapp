@@ -50,7 +50,7 @@ export default class NewsDetail extends Component {
                       <NewsComments uniqueKey={uniqueKey}/>
                   </div>
                   <div className="addcomment">
-                      <AddComment/>
+                      <AddComment uniqueKey={uniqueKey}/>
                   </div>
               </Col>
                 <Col span={6}>

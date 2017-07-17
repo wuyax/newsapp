@@ -34,11 +34,14 @@ class NewsHeader extends Component {
 
     }
   }
+  //加载页面是检查存储在本地的用户数据
   componentDidMount(){
-      let username = localStorage.getItem('username');
-      if(username){
+      let user = localStorage.getItem('user');
+      if(user){
+          let {NickUserName,UserId}=JSON.parse(user)
           this.setState({
-              username
+              username:NickUserName,
+              userid:UserId
           })
       }
   }
