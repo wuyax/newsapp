@@ -26,7 +26,7 @@ export default class Artical extends React.Component{
 
     }
     render(){
-        let pagecontent = this.state.article.pagecontent
+        let pagecontent = this.state.article.pagecontent;
         return(
             <div>
                 <article>

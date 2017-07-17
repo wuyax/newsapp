@@ -3,6 +3,8 @@ import {Row,Col,Card} from 'antd';
 import axios from 'axios';
 import Article from './news_artical';
 import MoreNews from './news_moreNews';
+import NewsComments from './news_comments';
+import AddComment from './news_addcomment';
 /*
 新闻详情组件
  */
@@ -15,9 +17,8 @@ export default class NewsDetail extends Component {
         }
 
     componentDidMount(){
-        console.log('componentDidMount')
-        this.getNews()
-
+        // console.log('componentDidMount')
+        this.getNews();
     }
     getNews= ()=>{
         let uniquekey=this.props.params.uniqueKey;
@@ -26,7 +27,7 @@ export default class NewsDetail extends Component {
             .then((response)=>{
                 let result = response.data;
                 if(response){
-                    console.log(result.title);
+                    // console.log(result.title);
                     this.setState({
                         newsDetil:result
                     })
@@ -36,13 +37,20 @@ export default class NewsDetail extends Component {
     }
 
     render () {
+        let {uniqueKey} = this.props.params;
         return (
           <div>
             <Row>
               <Col span={1}/>
               <Col span={16}>
                   <div>
-                      <Article uniqueKey={this.props.params.uniqueKey}/>
+                      <Article uniqueKey={uniqueKey}/>
+                  </div>
+                  <div className="newscomments">
+                      <NewsComments uniqueKey={uniqueKey}/>
+                  </div>
+                  <div className="addcomment">
+                      <AddComment/>
                   </div>
               </Col>
                 <Col span={6}>

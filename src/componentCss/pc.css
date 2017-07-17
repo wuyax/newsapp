@@ -192,3 +192,27 @@
     width: 500px;
     height: 450px;
 }
+
+
+.newscomments ,.addcomment{
+    padding: 20px;
+}
+.newscomment{
+    margin-top: 10px;
+
+}
+
+
+.addcommentbox{
+    margin-bottom: 20px;
+
+}
+.addcommentbtn{
+    width: 180px;
+    margin: 0 auto;
+}
+.addcommenttitle{
+    margin: 0 auto 10px;
+    text-align: center;
+    font-size: 16px;
+}

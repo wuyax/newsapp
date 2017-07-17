@@ -16,6 +16,7 @@ export default class NewsImageBlock extends React.Component{
                 newsArr:[]
             }
         }
+
     componentDidMount(){
         const {type,count} = this.props;
         let url = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${type}&count=${count}`
@@ -27,6 +28,7 @@ export default class NewsImageBlock extends React.Component{
                 });
             })
     }
+
     render(){
         let {newsArr} = this.state;
         let {cardWidth,imageWidth,cardTitle} = this.props;
@@ -35,7 +37,7 @@ export default class NewsImageBlock extends React.Component{
             height: '90px',
             display: 'block'
         }
-        // 定义标题的新式
+        // 定义标题的样式
         const titleStyles = {
             width: imageWidth,
             whiteSpace: "nowrap", // 不进行换行
