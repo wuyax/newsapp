@@ -12,7 +12,8 @@ export default class NewsDetail extends Component {
     constructor(props){
             super(props);
             this.state = {
-                newsDetil:{}
+                newsDetil:{},
+                update:false
             }
         }
 
@@ -35,6 +36,13 @@ export default class NewsDetail extends Component {
                 document.title = result.title + " - React News | React 驱动的新闻平台";
             });
     }
+    //这个函数纯粹是为了解决跨模块发请求才写的，从addcomment代用这个函数，然后更新comments
+    //如果传递参数，也许能做更多的事情。
+    update= ()=>{
+        this.setState({
+            update:true
+        });
+    }
 
     render () {
         let {uniqueKey} = this.props.params;
@@ -47,10 +55,10 @@ export default class NewsDetail extends Component {
                       <Article uniqueKey={uniqueKey}/>
                   </div>
                   <div className="newscomments">
-                      <NewsComments uniqueKey={uniqueKey}/>
+                      <NewsComments uniqueKey={uniqueKey} update={this.state.update}/>
                   </div>
                   <div className="addcomment">
-                      <AddComment uniqueKey={uniqueKey}/>
+                      <AddComment uniqueKey={uniqueKey} update={this.update}/>
                   </div>
               </Col>
                 <Col span={6}>

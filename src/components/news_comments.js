@@ -9,7 +9,7 @@ export default class NewsComments extends React.Component{
                 comments:[]
             }
         }
-    componentDidMount(){
+    componentWillReceiveProps(){
         let {uniqueKey}=this.props;
         let url = `http://newsapi.gugujiankong.com/Handler.ashx?action=getcomments&uniquekey=${uniqueKey}`
         axios.get(url)

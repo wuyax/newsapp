@@ -9,7 +9,8 @@ const FormItem = Form.Item;
 class AddComment extends React.Component{
     handleSubmit(ev){
         ev.preventDefault();
-        const { getFieldValue,resetFields,setFieldsValue} = this.props.form;
+        const { getFieldValue,setFieldsValue} = this.props.form;
+        let {update}= this.props;
         let user = localStorage.getItem('user');
         if(!user){
             notification['warning']({
@@ -40,22 +41,37 @@ class AddComment extends React.Component{
                     setFieldsValue({'comment':''})
                     // resetFields();
                 //    更新评论
-                    this.updatecomments();
+                    update();
                 }
             })
 
     }
-    updatecomments(){
+    //收藏文章的功能
+    addCollection(){
+        // console.log(this);
+        let user = localStorage.getItem('user');
+        if(!user){
+            notification['warning']({
+                message: '收藏失败',
+                description: '收藏文章，请先登录。',
+            });
+            return;
+        }
+        user = JSON.parse(user);
         let {uniqueKey} = this.props;
-        let url = `http://newsapi.gugujiankong.com/Handler.ashx?action=getcomments&uniquekey=${uniqueKey}`
+        let url  = `http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid=${user.UserId}&uniquekey=${uniqueKey}`
         axios.get(url)
             .then((response)=>{
-                let result = response.data;
-                this.setState({
-                    comments:result
-                })
+            let result = response.data
+                if(result===true){
+                    notification['success']({
+                        message: '收藏成功',
+                        description: '这条新闻已经收藏到了你的收藏级，请到个人中心查看！',
+                    });
+                }
             })
     }
+
     render(){
         const { TextArea } = Input;
         const { getFieldDecorator} = this.props.form;
@@ -75,7 +91,7 @@ class AddComment extends React.Component{
                     </div>
                     <div className="addcommentbtn">
                         <Button type="primary" htmlType="submit" style={{marginRight: '20px'}}>提交评论</Button>
-                        <Button type="primary">收藏文章</Button>
+                        <Button type="primary" onClick={this.addCollection.bind(this)}>收藏文章</Button>
                     </div>
                 </Form>
             </div>
