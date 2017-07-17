@@ -63,19 +63,10 @@ class NewsHeader extends Component {
         })
     }
 
-    login = ()=>{
-      let username = this.refs.username.value;
-        this.setState({
-            visiable:false
-        });
-        this.setState({
-            username
-        })
-    }
     logout = ()=>{
         this.setState({
             username:null
-            })
+            });
         localStorage.removeItem('user');
     }
 
@@ -107,10 +98,6 @@ class NewsHeader extends Component {
         let {getFieldsValue,resetFields,setFieldsValue} = this.props.form;
         let {userName,passWord,r_userName,r_passWord,r_confirmPassWord} = getFieldsValue();
         //http://newsapi.gugujiankong.com/Handler.ashx?action=register&r_userName=abc&r_password=123123&r_confirmPassword=123123
-
-
-
-
 
         let url = `http://newsapi.gugujiankong.com/Handler.ashx?`;
         if(isRegisit){
@@ -238,7 +225,7 @@ class NewsHeader extends Component {
           <Col span={3}>
             <a href="/" className="logo">
               <img src={logo} alt="logo"/>
-              <span>News</span>
+              <span>NEWS</span>
             </a>
           </Col>
           <Col span={19}>
