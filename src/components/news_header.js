@@ -223,7 +223,7 @@ class NewsHeader extends Component {
               <Link to="/usercenter">
                   <Button type="dashed">用户中心</Button>
               </Link>
-              <Button onClick  = {this.logout}>退出</Button>
+              <Button onClick  = {this.logout}><Link to="/">退出</Link></Button>
           </MenuItem>
       ):(
           <MenuItem key="rigister" style={{float:'right'}}>
