@@ -48,6 +48,8 @@ class NewsHeader extends Component {
   // 处理点击menuitem的回调
   handleClickItem = (event) => {
     // 更新selectKey
+      console.log(event);
+      // event.key = 'guoji';
     this.setState({
         selectKey: event.key
     });
@@ -55,7 +57,8 @@ class NewsHeader extends Component {
         this.setState({
             visiable:true
         })
-    }
+    };
+    console.log(event)
   }
     handleOk= ()=>{
         this.setState({

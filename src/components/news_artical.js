@@ -12,6 +12,10 @@ export default class Artical extends React.Component{
                 article:{}
             }
         }
+    //直接访问时保证能显示新闻的详情
+    componentDidMount() {
+        this.componentWillReceiveProps();
+    }
     //使用componentWillReceiveProps是为了解决点击{相关新闻}时无法跳转的情况，每次更新属性时都重新发送请求。
     componentWillReceiveProps(){
         let {uniqueKey} = this.props;

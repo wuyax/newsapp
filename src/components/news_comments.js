@@ -13,7 +13,11 @@ export default class NewsComments extends React.Component{
             this.state = {
                 comments:[]
             }
-        }
+    }
+    //解决直接访问时候评论无法加载的问题
+    componentDidMount() {
+        this.componentWillReceiveProps();
+    }
 
     componentWillReceiveProps(){
         let {uniqueKey}=this.props;

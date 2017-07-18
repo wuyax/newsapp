@@ -17,25 +17,6 @@ export default class NewsDetail extends Component {
             }
         }
 
-    componentDidMount(){
-        // console.log('componentDidMount')
-        this.getNews();
-    }
-    getNews= ()=>{
-        let uniquekey=this.props.params.uniqueKey;
-        let url = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=${uniquekey}`;
-        axios.get(url)
-            .then((response)=>{
-                let result = response.data;
-                if(response){
-                    // console.log(result.title);
-                    this.setState({
-                        newsDetil:result
-                    })
-                };
-                document.title = result.title + " - React News | React 驱动的新闻平台";
-            });
-    }
     //这个函数纯粹是为了解决跨模块发请求才写的，从addcomment调用这个函数，然后更新state进而更新comments.
     //如果传递参数，也许能做更多的事情。
     update= ()=>{
@@ -43,6 +24,9 @@ export default class NewsDetail extends Component {
             update:true
         });
     }
+
+
+
 
     render () {
         let {uniqueKey} = this.props.params;
@@ -65,7 +49,7 @@ export default class NewsDetail extends Component {
                     <div className="moreNews">
                         {/*这段代码需要优化，通过读者点击的链接来获取来动态的推荐相关新闻*/}
                         <Card title="相关新闻">
-                            {<MoreNews/>}
+                            {<MoreNews uniqueKey={uniqueKey}/>}
                         </Card>
                     </div>
                 </Col>

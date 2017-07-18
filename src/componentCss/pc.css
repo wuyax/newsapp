@@ -234,3 +234,22 @@
     margin: 10px 2px;
 
 }
+/*分类新闻页面*/
+.classifylist{
+    margin: 20px;
+}
+.classify{
+    margin: 20px;
+}
+.classify li{
+     padding-top: 10px;
+     line-height: 20px;
+     font-size: 16px;
+
+ }
+.classify li a{
+    color: black;
+}
+.classify li a:hover{
+    color: #108ee9
+}
