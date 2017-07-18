@@ -1,11 +1,11 @@
 import React from 'react'
 import {render} from 'react-dom'
-import {Router, Route,IndexRoute, hashHistory} from 'react-router'
+import {Router, Route,IndexRoute, hashHistory,IndexRedirect} from 'react-router'
 import App from './components/app'
 import NewsContainer from './components/news_container'
 import NewsDetail from './components/news_detail'
 import UserCenter from './components/user_center'
-
+let user = localStorage.getItem('user');
 
 render((
   <Router history={hashHistory}>

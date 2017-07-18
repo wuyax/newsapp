@@ -36,7 +36,7 @@ export default class NewsDetail extends Component {
                 document.title = result.title + " - React News | React 驱动的新闻平台";
             });
     }
-    //这个函数纯粹是为了解决跨模块发请求才写的，从addcomment代用这个函数，然后更新comments
+    //这个函数纯粹是为了解决跨模块发请求才写的，从addcomment调用这个函数，然后更新state进而更新comments.
     //如果传递参数，也许能做更多的事情。
     update= ()=>{
         this.setState({

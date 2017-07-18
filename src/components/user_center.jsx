@@ -12,6 +12,10 @@ import axios from 'axios';
 
 const TabPane = Tabs.TabPane;
 let user = localStorage.getItem('user');
+    if(!user){
+        user='{}';
+
+    }
     user = JSON.parse(user);
 
 
@@ -99,8 +103,8 @@ export default class UserCenter extends React.Component{
                                 {
                                    collections.map((collection,index)=>{
                                        return (
-                                           <div className="collectionlist">
-                                               <Card title={`文章ID：${collection.uniquekey}`} key={index}
+                                           <div className="collectionlist" key={index}>
+                                               <Card title={`文章ID：${collection.uniquekey}`}
                                                        extra={<Link to={`/detail/${collection.uniquekey}`}>查看新闻详情</Link>}>
                                                    {`文章标题：${collection.Title}`}
                                                </Card>
@@ -113,8 +117,8 @@ export default class UserCenter extends React.Component{
                                 {
                                     comments.map((comment,index)=>{
                                         return(
-                                            <div className="commentslist">
-                                                <Card title={`文章ID：${comment.uniquekey}`} key={index} extra={<Link to={`/detail/${comment.uniquekey}`}>查看新闻详情</Link>}>
+                                            <div className="commentslist" key={index}>
+                                                <Card title={`文章ID：${comment.uniquekey}`} extra={<Link to={`/detail/${comment.uniquekey}`}>查看新闻详情</Link>}>
                                                     {`评论内容：${comment.Comments}`}
                                                 </Card>
                                             </div>
