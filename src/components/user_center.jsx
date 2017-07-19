@@ -118,7 +118,7 @@ export default class UserCenter extends React.Component{
                                     comments.map((comment,index)=>{
                                         return(
                                             <div className="commentslist" key={index}>
-                                                <Card title={`文章ID：${comment.uniquekey}`} extra={<Link to={`/detail/${comment.uniquekey}`}>查看新闻详情</Link>}>
+                                                <Card title={`文章ID：${comment.uniquekey} 发表于：${comment.datetime}`} extra={<Link to={`/detail/${comment.uniquekey}`}>查看新闻详情</Link>}>
                                                     {`评论内容：${comment.Comments}`}
                                                 </Card>
                                             </div>
