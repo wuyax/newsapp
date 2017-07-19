@@ -11,8 +11,25 @@ export default class NewsClassify extends React.Component{
             }
         }
 
-    componentWillReceiveProps() {
-        let {type} = this.props.params
+    componentDidMount() {
+        let {type} = this.props.params;
+        this.getNewsClassify(type);
+        // console.log('componentDidMount');
+    }
+    componentWillReceiveProps(nextProps) {
+        // console.log(this.props.params.type,nextProps.params.type)
+        //this.getNewsClassify();
+        if(this.props.params.type===nextProps.params.type){
+            let {type} = this.props.params;
+            this.getNewsClassify(type);
+        }
+        // console.log('componentWillReceiveProps');
+    }
+
+    getNewsClassify = (type)=>{
+
+        console.log(type);
+        console.log(this.props);
         let url = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${type}&count=20`
         axios.get(url)
             .then((response)=>{
@@ -22,7 +39,6 @@ export default class NewsClassify extends React.Component{
                 });
             })
     }
-
 
 
 

@@ -29,7 +29,7 @@ class NewsHeader extends Component {
     // 初始化状态
     this.state = {
         username: null,
-        selectKey: 'top',
+        selectKey: 'shouye',
         visiable:false
 
     }
@@ -48,8 +48,6 @@ class NewsHeader extends Component {
   // 处理点击menuitem的回调
   handleClickItem = (event) => {
     // 更新selectKey
-      console.log(event);
-      // event.key = 'guoji';
     this.setState({
         selectKey: event.key
     });
@@ -58,7 +56,6 @@ class NewsHeader extends Component {
             visiable:true
         })
     };
-    console.log(event)
   }
     handleOk= ()=>{
         this.setState({
@@ -234,29 +231,32 @@ class NewsHeader extends Component {
           <Col span={19}>
             <div>
               <Menu mode="horizontal" selectedKeys={[selectKey]} onClick={this.handleClickItem}>
-                <MenuItem key="top">
-                  <Icon type="appstore-o"/>头条
+                <MenuItem key="shouye">
+                    <Link to='/'><Icon type="appstore-o"/>首页</Link>
+                </MenuItem>
+                  <MenuItem key="top">
+                      <Link to='/classify/top'><Icon type="appstore-o"/>头条</Link>
                 </MenuItem>
                 <MenuItem key="shehui">
-                  <Icon type="appstore-o"/>社会
+                    <Link to='/classify/shehui'><Icon type="appstore-o"/>社会</Link>
                 </MenuItem>
                 <MenuItem key="guonei">
-                  <Icon type="appstore-o"/>国内
+                    <Link to='/classify/guonei'><Icon type="appstore-o"/>国内</Link>
                 </MenuItem>
                 <MenuItem key="guoji">
-                  <Icon type="appstore-o"/>国际
+                    <Link to='/classify/guoji'><Icon type="appstore-o"/>国际</Link>
                 </MenuItem>
                 <MenuItem key="yule">
-                  <Icon type="appstore-o"/>娱乐
+                    <Link to='/classify/yule'><Icon type="appstore-o"/>娱乐</Link>
                 </MenuItem>
                 <MenuItem key="tiyu">
-                  <Icon type="appstore-o"/>体育
+                    <Link to='/classify/tiyu'><Icon type="appstore-o"/>体育</Link>
                 </MenuItem>
                 <MenuItem key="keji">
-                  <Icon type="appstore-o"/>科技
+                    <Link to='/classify/keji'><Icon type="appstore-o"/>科技</Link>
                 </MenuItem>
                 <MenuItem key="shishang">
-                  <Icon type="appstore-o"/>时尚
+                    <Link to='/classify/shishang'><Icon type="appstore-o"/>时尚</Link>
                 </MenuItem>
                   {userinfo}
               </Menu>

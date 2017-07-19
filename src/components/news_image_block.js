@@ -62,7 +62,7 @@ export default class NewsImageBlock extends React.Component{
                 )
             }):'没有新闻'
         return(
-            <Card title = {cardTitle} style={{width: cardWidth}} className="topNewsList" extra={<a href="#">More>></a>}>
+            <Card title = {cardTitle} style={{width: cardWidth}} className="topNewsList" extra={<a href={`#/classify/${this.props.type}`}>More>></a>}>
                 {newsList}
             </Card>
         )
